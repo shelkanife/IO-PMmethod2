@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="problem">
+            <h1>M&eacute;todo Simplex</h1>
+            <form>
+                <div>
+                    <label for="variables">N&uacute;mero de variables:</label>
+                    <input type="number" name="variables" id="variables" min="2">
+                </div>
+                <div>
+                    <label for="constrains">N&uacute;mero de restricciones:</label>
+                    <input type="number" name="constrains" id="constrains" min="1">
+                </div>
+                <div>
+                    <input type="submit" value="Generate">
+                </div>
+            </form>
+            <div id="layout"></div>
+            <div id="tables"></div>
+        </div>
+    </div>
+    <script src="/static/js/layout.js"></script>
+    <script src="/static/js/problem.js"></script>
+</body>
+</html>
