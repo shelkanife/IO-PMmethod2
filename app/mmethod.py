@@ -41,7 +41,7 @@ def find_minnimun(indexes:list,divisiones:list,pivotes:list)->list or None:
         has_solution = False
         return
 
-def find_pivot(rightSide:list,pivotColumn:list)->function:
+def find_pivot(rightSide:list,pivotColumn:list):
     # Encuentra los arrglos de lado derecho/ columna pivote
     index = []
     divisiones = []
