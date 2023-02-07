@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://kit.fontawesome.com/ed0367ce94.css"
+      crossorigin="anonymous"
+    />
     <title>{{ title }}</title>
-</head>
-<body>
-    <div class="wrapper">
-        <div id="problem">
-            <h1>M&eacute;todo de la M</h1>
-            <form>
-                <div>
-                    <label for="variables">N&uacute;mero de variables:</label>
-                    <input type="number" name="variables" id="variables" min="2">
-                </div>
-                <div>
-                    <label for="constrains">N&uacute;mero de restricciones:</label>
-                    <input type="number" name="constrains" id="constrains" min="1">
-                </div>
-                <div>
-                    <input type="submit" value="Generate">
-                </div>
-            </form>
-            <div id="layout"></div>
-            <div id="tables"></div>
-        </div>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>M&eacute;todo de la M</h1>
+        <button id="toggle-btn">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </header>
+      <div id="problem">
+        <form class="description">
+          <div class="form-body">
+            <div class="form-control">
+              <label for="variables">N&uacute;mero de variables:</label>
+              <input
+                type="number"
+                name="variables"
+                id="variables"
+                min="2"
+                pattern="[1-9]{1,3}"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="constrains">N&uacute;mero de restricciones:</label>
+              <input
+                type="number"
+                name="constrains"
+                id="constrains"
+                min="1"
+                pattern="[0-9]{1,3}"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-actions">
+            <input type="submit" value="Generar" />
+            <input type="reset" value="Limpiar" />
+          </div>
+        </form>
+        <form id="layout" style="text-align: center"></form>
+        <div id="tables"></div>
+      </div>
     </div>
+    <script
+      src="https://kit.fontawesome.com/ed0367ce94.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="/static/js/layout.js"></script>
     <script src="/static/js/problem.js"></script>
-</body>
+  </body>
 </html>

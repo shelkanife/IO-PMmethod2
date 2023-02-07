@@ -1,36 +1,185 @@
-#wrapper{
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    border: 1px solid black;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background-color ease-in-out 0.2s, color ease-in-out 0.2s;
 }
 
-
-table, th, td {
-    border:1px solid black;
-}
-table{
-    width: 100%;
-    text-align: center;
-    margin-left:auto; 
-    margin-right:auto;
+body.dark {
+  background-color: black;
+  --text: #fff;
+  --bg: black;
+  --border: #fff;
+  --table-bg: #212529;
+  --table-bg-strip: #2c3034;
 }
 
-.wrapper {
-    margin: auto;
-    width: 75%;
-    text-align: center;   
+body {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  --text: #000;
+  --bg: #fff;
+  --border: #000;
+  --table-bg-strip: rgba(0, 0, 0, 0.05);
+}
+header {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+header h1 {
+  flex: 1;
+  white-space: nowrap;
 }
 
-#problem {
-    text-align: center;
-    border: 1px dotted blue;
-    width: 100%;
-    padding: 10px;
+header button {
+  width: 50px;
+  aspect-ratio: 1;
+  margin-top: 0;
 }
-#tables {
+.container {
+  margin: auto;
+  width: 80%;
+}
+form div.form-body {
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+}
+form div.form-actions {
+  padding-bottom: 1rem;
+}
+.form-control {
+  margin-bottom: 1rem;
+  flex: 1;
+  flex-basis: 250px;
+}
+
+form.description label,
+form.description input[type="number"] {
+  display: block;
+  width: 100%;
+  background-color: var(--bg);
+}
+label {
+  color: var(--text);
+}
+input[type="number"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--text);
+}
+input[type="text"] {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  width: 100px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  color: var(--text);
+  background-color: var(--bg);
+}
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+input[type="submit"],
+input[type="reset"] {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+}
+div.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  color: var(--text);
+  margin-top: 3rem;
+}
+
+table {
+  color: var(--text);
+}
+thead th {
+  border-bottom: 1px solid var(--border);
+}
+tr {
+  border: none;
+}
+td,
+th {
+  min-width: 100px;
+  font-size: 1rem;
+  padding: 0.5rem 0.5rem;
+}
+table {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+tr.header {
+  border-bottom: 1px solid var(--border);
+}
+tr:nth-child(odd) {
+  background-color: var(--table-bg-strip);
+}
+
+@media screen and (max-width: 576px) {
+  p {
     text-align: left;
+  }
 }
-input{
-    display: inline-block;
+
+@media print {
+  body {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    --text: #000;
+    --bg: #fff;
+    --border: #000;
+    --table-bg-strip: rgba(0, 0, 0, 0.05);
+  }
+  th,
+  td {
+    border: 1px solid var(--border);
+    width: auto;
+    padding: auto;
+  }
+  form.description {
+    display: none;
+  }
+  table {
+    width: auto;
+  }
+  header button {
+    display: none;
+  }
 }
